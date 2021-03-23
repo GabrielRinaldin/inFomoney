@@ -52,7 +52,7 @@ public class DollarServlet extends HttpServlet {
 	    JsonParser jp = new JsonParser(); //from gson
 	    JsonElement root = jp.parse(new InputStreamReader((InputStream) json.getContent())); //Convert the input stream to a json element
 	    JsonObject rootobj = root.getAsJsonObject(); //May be an array, may be an object. 
-	    JsonElement code = rootobj.get("USD"); // Get value by code name	
+	    JsonElement code = rootobj.get("USD"); // pegar valor por código.	
 	    
 	    //Get values by name from CODIGO 
 	    JsonElement codein = ((JsonObject) code).get("code");
