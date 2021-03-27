@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import connection.Dao;
 import entity.Moedas;
@@ -13,8 +12,7 @@ import entity.Moedas;
 public class CotationDao extends Dao{
 	
 	private static final String INSERT = "INSERT INTO Moedas (code,codein,name,high,low,varBid,ask,pctChange,bid,timestamp,create_date) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-	private static final String SELECT = "SELECET * FROM VALUES_COTATION";
-	private static final String SELECTCODE = "SELECET * FROM VALUES_COTATION WHERE CODE = ?";
+	private static final String SELECTCODE = "SELECET * FROM Moedas WHERE code = ?";
 	private static final String DELETE = "DELETE FROM VALUES_COTATION WHERE ID = ?";
 
 	 
@@ -48,7 +46,7 @@ public class CotationDao extends Dao{
 	
 	//Select pela id
 	public Moedas selectCotation(int id) {
-		Moedas cotation = null;
+		Moedas moedas = null;
 		
 		try(Connection connection = this.conectar();
 				PreparedStatement pst = connection.prepareStatement(SELECTCODE);)
@@ -58,9 +56,9 @@ public class CotationDao extends Dao{
 			
 			while(rs.next())
 			{
-				cotation = new Moedas();					
-				cotation.setId(rs.getInt("ID"));
-				cotation.setName(rs.getString("NOME"));
+				moedas = new Moedas();					
+				moedas.setCode(rs.getString("code"));
+				
 			}		
 			
 		}
@@ -68,24 +66,37 @@ public class CotationDao extends Dao{
 		{
 			e.printStackTrace();
 		}
-		return cotation;
+		return moedas;
 	}
 	
 	//list All
 	
-	public List<Moedas> selectAllCotation() {
-		List<Moedas> listCotation = new ArrayList<Moedas>();
+	public  ArrayList<Moedas> selectAllCotation() {
+		String sql = "SELECT  * FROM MOEDAS ORDER BY NAME";
+		ArrayList<Moedas> listCotation = new ArrayList<Moedas>();
 		
 		try(Connection connection = this.conectar();
-				PreparedStatement pst = connection.prepareStatement(SELECT);)
+				PreparedStatement pst = connection.prepareStatement(sql);)
 		{
 			ResultSet rs = pst.executeQuery();
 			
 			while(rs.next())
 			{
-				Moedas cotation = new Moedas();					
-				cotation.setId(rs.getInt("ID"));
-				cotation.setName(rs.getString("NOME"));
+				Moedas cotation = new Moedas();
+				cotation.setId(rs.getInt("id"));
+				cotation.setCode(rs.getString("code"));
+				cotation.setCodein(rs.getString("codein"));
+				cotation.setName(rs.getString("name"));
+				cotation.setHigh(rs.getFloat("high"));
+				cotation.setLow(rs.getFloat("low"));
+				cotation.setVarBid(rs.getFloat("varBid"));
+				cotation.setPctChange(rs.getFloat("pctChange"));
+				cotation.setBid(rs.getFloat("bid"));
+				cotation.setAsk(rs.getFloat("ask"));
+				cotation.setTimestamp(rs.getLong("timestamp"));
+				cotation.setCreate_date(rs.getString("create_date"));	
+				
+				listCotation.add (cotation);
 			}		
 			
 		}
@@ -96,7 +107,7 @@ public class CotationDao extends Dao{
 		
 		return listCotation;
 	}
-
+	
 	//Delete
 	public void deleta(Moedas cotation)
 	{

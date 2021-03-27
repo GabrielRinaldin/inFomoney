@@ -8,6 +8,8 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -38,6 +40,25 @@ public class DollarServlet extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+//		 System.out.println("Chamando Método Get");
+//		    CotationDao contatoDAO = new CotationDao();
+//
+		ArrayList<Moedas> lista = cotationDao.selectAllCotation();
+//
+//		    //Atribuir a Lista no request
+//		    request.setAttribute("lista", lista );
+//
+//		    //Encaminhando para o JSP
+//		    RequestDispatcher saida= request.getRequestDispatcher("/viewdollar/exibeContations.jsp");
+//		    saida.forward(request, response);
+//		    System.out.println("saida Get" + lista);
+		    
+		// encaminhar a lista de moedas para a tela 
+		
+		request.setAttribute("teste", lista);
+		RequestDispatcher rd = request.getRequestDispatcher("/viewdollar/exibeContations.jsp");
+		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -71,7 +92,6 @@ public class DollarServlet extends HttpServlet {
 	      JSONObject dadosMoedas = jsonObjectMoedas.getJSONObject(iteratormoedas.next());
 
 	      Moedas moedas = new Moedas();
-//	      moedas.setId(dadosMoedas.getInt("id"));
 	      moedas.setCode(dadosMoedas.getString("code"));
 	      moedas.setCodein(dadosMoedas.getString("codein"));
 	      moedas.setName(dadosMoedas.getString("name"));
@@ -88,6 +108,8 @@ public class DollarServlet extends HttpServlet {
 	      cotationDao.store(moedas);
 	   }  
 	}
+	
+	
 	
 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

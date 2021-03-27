@@ -12,9 +12,10 @@
 <body>
 	<h1>Dollar</h1>
 	
-	<form action="dollar" method="POST">
+	<form action="dollar" method="GET">
 	<button class="btn btn-danger" type="submit">Entrar</button>
 	</form>
+	
 	
 	
 	<div id="append"></div>
@@ -22,18 +23,18 @@
 	<script>
 	
 	
-	$.ajax({
+// 	$.ajax({
 		
-		type: "GET",
-		url: "http://localhost:8080/infomoney/viewdollar/dollar",
-		dataYpe: "JSON",
-		success: function(data){
-			$("#append").append(data)
-			$("#grafico").append(data)
-			console.log(data);
-		}
+// 		type: "GET",
+// 		url: "http://localhost:8080/infomoney/viewdollar/dollar",
+// 		dataYpe: "JSON",
+// 		success: function(data){
+// 			$("#append").append(data)
+// 			$("#grafico").append(data)
+// 			console.log(data);
+// 		}
 		 
-	});
+// 	});
 	
 	
 	</script>
