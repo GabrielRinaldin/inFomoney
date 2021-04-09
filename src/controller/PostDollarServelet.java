@@ -65,7 +65,7 @@ public class PostDollarServelet {
 				moedas.setAsk(dadosMoedas.getFloat("ask"));
 				moedas.setTimestamp(dadosMoedas.getLong("timestamp"));
 				moedas.setCreate_date(dadosMoedas.getString("create_date"));
-				moedas.setCents(dadosMoedas.getFloat("high") - dadosMoedas.getFloat("low"));
+				moedas.setCents( Math.round(dadosMoedas.getFloat("high") - dadosMoedas.getFloat("low")));
 
 				listaDeMoedas.add(moedas);
 				cotationDao.store(moedas);

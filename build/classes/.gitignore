@@ -1,4 +1,2 @@
 /controller/
-/servlet/
-/dao/
-/entity/
+/connection/

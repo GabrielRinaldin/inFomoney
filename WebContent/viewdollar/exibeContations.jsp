@@ -98,7 +98,7 @@ body h1 {
 				<ul class="nav nav-pills nav-sidebar flex-column"
 					data-widget="treeview" role="menu" data-accordion="false">
 					<li class="nav-item"><a
-						href="http://localhost:8081/infomoney/viewdollar/Dashboard.jsp"
+						href="http://localhost:8080/infomoney/viewdollar/Dashboard.jsp"
 						class="nav-link"> <i class="nav-icon fas fa-home"></i>
 							<p>Dashboard</p>
 					</a></li>
