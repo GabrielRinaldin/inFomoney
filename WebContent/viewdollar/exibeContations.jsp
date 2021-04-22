@@ -96,20 +96,55 @@ ArrayList<Moeda> lista = (ArrayList<Moeda>) request.getAttribute("listaTodas");
 body h1 {
 	font-style: italic;
 	font-size: 30px;
+	
+}
+
+.sidebar
+{
+   color: white;
+  background-color: black;
+    height: 75px;
+	width: 200px;
+	/*background-clip: content-box;*/
+	border-radius: 5px;
+	border-bottom-left-radius: inherit;
+	font-size: 20px;
+	font-style: oblique;
+	/*overflow: hidden;*/
+	border-radius: 5px 5px 0 0;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 2);
+
+
+}
+
+.main-footer
+{
+ Color:black;
+ text-align: center;
+ font-style: oblique;
+ font-size: 15px;
+}
+
+.titulo{
+
+ Color:black;
+ text-align: center;
+ font-style: oblique;
+ font-size: 30px;
 }
 </style>
 
 </head>
 <body>
-	<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+	<nav>
 		<!-- Left navbar links -->
-		<ul class="navbar-nav">
-			<li class="nav-item d-none d-sm-inline-block">
-				<h1>Cotação</h1>
+		<ul>
+			<li >
+				<h1 class="titulo">Infomoney Cotações </h1>
 			</li>
 		</ul>
 	</nav>
-	<aside class="main-sidebar sidebar-dark-primary elevation-4">
+	<aside class="main-sidebar sidebar-grey-primary elevation-4">
 		<div class="sidebar">
 			<nav class="mt-2">
 				<ul class="nav nav-pills nav-sidebar flex-column"
@@ -256,11 +291,10 @@ body h1 {
 
 
 	<footer class="main-footer">
-		<strong>Copyright © 2021 <a
+		<strong>Infomoney <a
 			href="https://github.com/GabrielRinaldin/inFomoney"> GitHub</a>.
 		</strong> All rights reserved.
 		<div class="float-right d-none d-sm-inline-block">
-			<b>Version</b> 3.1.0
 		</div>
 	</footer>
 
