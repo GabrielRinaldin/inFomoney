@@ -60,17 +60,32 @@ ArrayList<Moeda> lista = (ArrayList<Moeda>) request.getAttribute("listaTodas");
 }
 
 #BT {
-	height: 50px;
+	height: 75px;
 	width: 200px;
-	background-clip: content-box;
-	color: gray;
+	color: Black;
 	border-radius: 5px;
 	border-bottom-left-radius: inherit;
-	font-size: 17px;
+	font-size: 13px;
 	font-style: oblique;
 	overflow: hidden;
 	border-radius: 5px 5px 0 0;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 20px rgba(0, 0, 0,2);
+}
+
+#BTAtualizar
+{
+
+	height: 75px;
+	width: 200px;
+	/*background-clip: content-box;*/
+	border-radius: 5px;
+	border-bottom-left-radius: inherit;
+	font-size: 14px;
+	font-style: oblique;
+	overflow: hidden;
+	border-radius: 5px 5px 0 0;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 2);
+
 }
 
 #content-tabble th {
@@ -100,12 +115,53 @@ body h1 {
 				<ul class="nav nav-pills nav-sidebar flex-column"
 					data-widget="treeview" role="menu" data-accordion="false">
 					<li class="nav-item"><a href="Dashboard.jsp" class="nav-link">
-							<i class="nav-icon fas fa-home"></i>
-							<p>Dashboard</p>
+							<i class="nav-icon fas fa-home" ></i>
+							<p >Dashboard</p>
+							
+							
 					</a></li>
 				</ul>
+				
 			</nav>
 		</div>
+		<div class="col-lg-1" style="left: 10px">
+				<button type="button" value="USD" name="dolar"
+					class="btn btn-default codecoin" id="BT" data-toggle="modal"
+					data-target="#modal-xl">Dólar Americano/Real Brasileiro</button>
+				<button type="button" value="AUD" class="btn btn-default codecoin"
+					id="BT" data-toggle="modal" data-target="#modal-xl">Dólar
+					Australiano/Real Brasileiro</button>
+				<button type="button" value="CAD" class="btn btn-default codecoin"
+					id="BT" data-toggle="modal" data-target="#modal-xl">Dólar
+					Canadense/Real Brasileiro</button>
+				<button type="button" value="EUR" class="btn btn-default codecoin"
+					id="BT" data-toggle="modal" data-target="#modal-xl">Euro/Real
+					Brasileiro</button>
+				<button type="button" value="CHF" class="btn btn-default codecoin"
+					id="BT" data-toggle="modal" data-target="#modal-xl">Franco
+					Suíço/Real Brasileiro</button>
+				<button type="button" value="JPY" class="btn btn-default codecoin"
+					id="BT" data-toggle="modal" data-target="#modal-xl">Iene
+					Japonês/Real Brasileiro</button>
+				<button type="button" value="GBP" class="btn btn-default codecoin"
+					id="BT" data-toggle="modal" data-target="#modal-xl">Libra
+					Esterlina/Real Brasileiro</button>
+				<button type="button" value="ILS" class="btn btn-default codecoin"
+					id="BT" data-toggle="modal" data-target="#modal-xl">Novo
+					Shekel Israelense/Real Brasileiro</button>
+				<button type="button" value="ARS" class="btn btn-default codecoin"
+					id="BT" data-toggle="modal" data-target="#modal-xl">Peso
+					Argentino/Real Brasileiro</button>
+				<button type="button" value="CNY" class="btn btn-default codecoin"
+					id="BT" data-toggle="modal" data-target="#modal-xl">Yuan
+					Chinês/Real Brasileiro</button>
+					<form action="dollar" method="POST">
+				<button class="btn btn-danger" type="submit" id = "BTAtualizar">Atualizar
+					valores</button>
+			</form>
+			</div>
+		
+		
 	</aside>
 	<div class="container-fluid">
 		<div class="row">
@@ -154,43 +210,6 @@ body h1 {
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-1" style="left: 400px">
-				<button type="button" value="USD" name="dolar"
-					class="btn btn-default codecoin" id="BT" data-toggle="modal"
-					data-target="#modal-xl">Dólar Americano/Real Brasileiro</button>
-				<button type="button" value="AUD" class="btn btn-default codecoin"
-					id="BT" data-toggle="modal" data-target="#modal-xl">Dólar
-					Australiano/Real Brasileiro</button>
-				<button type="button" value="CAD" class="btn btn-default codecoin"
-					id="BT" data-toggle="modal" data-target="#modal-xl">Dólar
-					Canadense/Real Brasileiro</button>
-				<button type="button" value="EUR" class="btn btn-default codecoin"
-					id="BT" data-toggle="modal" data-target="#modal-xl">Euro/Real
-					Brasileiro</button>
-				<button type="button" value="CHF" class="btn btn-default codecoin"
-					id="BT" data-toggle="modal" data-target="#modal-xl">Franco
-					Suíço/Real Brasileiro</button>
-				<button type="button" value="JPY" class="btn btn-default codecoin"
-					id="BT" data-toggle="modal" data-target="#modal-xl">Iene
-					Japonês/Real Brasileiro</button>
-				<button type="button" value="GBP" class="btn btn-default codecoin"
-					id="BT" data-toggle="modal" data-target="#modal-xl">Libra
-					Esterlina/Real Brasileiro</button>
-				<button type="button" value="ILS" class="btn btn-default codecoin"
-					id="BT" data-toggle="modal" data-target="#modal-xl">Novo
-					Shekel Israelense/Real Brasileiro</button>
-				<button type="button" value="ARS" class="btn btn-default codecoin"
-					id="BT" data-toggle="modal" data-target="#modal-xl">Peso
-					Argentino/Real Brasileiro</button>
-				<button type="button" value="CNY" class="btn btn-default codecoin"
-					id="BT" data-toggle="modal" data-target="#modal-xl">Yuan
-					Chinês/Real Brasileiro</button>
-					<form action="dollar" method="POST">
-				<button class="btn btn-danger" type="submit">Atualizar
-					valores</button>
-			</form>
-			</div>
-			
 		</div>
 
 

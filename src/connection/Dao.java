@@ -8,7 +8,7 @@ public class Dao {
 	private String driver = "com.mysql.cj.jdbc.Driver";
 	private String url = "jdbc:mysql://127.0.0.1:3306/infomoney?useTimezone=true&serverTimezone=UTC&useUnicode=yes&characterEncoding=UTF-8";
 	private String user = "root";
-	private String password = "1234";
+	private String password = "root";
 	
 
 

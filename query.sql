@@ -55,7 +55,7 @@ diferenca_maxima_minima float,
 variacao float,
 porcentagem_de_variacao float,
 valor_convertido float,
-create_date VARCHAR(255)	
+data_de_criacao VARCHAR(255)	
 );
 
 alter table moedas add column cents float not null;
